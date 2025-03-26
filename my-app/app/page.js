@@ -7,87 +7,66 @@ export default function Home() {
       <main className={styles.main}>
         <Image
           className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
+          src="/poditfy-logo.svg" // Remplacez ce logo par celui de votre podcast
+          alt="Logo Poditfy"
           width={180}
           height={38}
           priority
         />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+        
+        <h1>Bienvenue sur Podify</h1>
+        <p>Découvrez vos podcasts préférés.</p>
 
         <div className={styles.ctas}>
           <a
             className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            href="https://example.com/podcast-episode" // Remplacez par le lien vers un épisode du podcast
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            <button className={styles.playButton}>Écouter un épisode</button>
           </a>
           <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            href="https://example.com/about" // Lien vers une page à propos du podcast
             target="_blank"
             rel="noopener noreferrer"
             className={styles.secondary}
           >
-            Read our docs
+            En savoir plus
           </a>
         </div>
+
+        <div className={styles.episodeList}>
+          <h2>Épisodes récents</h2>
+          <ul>
+            <li><a href="/episode1">Épisode 1: Introduction au podcast</a></li>
+            <li><a href="/episode2">Épisode 2: Le monde du podcasting</a></li>
+            <li><a href="/episode3">Épisode 3: Comment créer votre podcast</a></li>
+          </ul>
+        </div>
       </main>
+
       <footer className={styles.footer}>
         <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          href="https://example.com/contact"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
+          Contactez-nous
         </a>
         <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          href="https://example.com/privacy-policy"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
+          Politique de confidentialité
         </a>
         <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          href="https://example.com/terms"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
+          Conditions d'utilisation
         </a>
       </footer>
     </div>
