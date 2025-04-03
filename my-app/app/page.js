@@ -1,107 +1,136 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/images/poditfy-logo.png" // Remplacez ce logo par celui de votre podcast
-          alt="Logo Poditfy"
-          width={180}
-          height={100}
-          priority
-        />
-        
-        <h1>Bienvenue sur Podify</h1>
-        <br></br>
-        <p>Découvrez vos podcasts préférés.</p>
-<br></br>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://example.com/podcast-episode" // Remplacez par le lien vers un épisode du podcast
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className={styles.playButton}>Écouter un épisode</button>
-          </a>
-          <a
-            href="https://example.com/about" // Lien vers une page à propos du podcast
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            En savoir plus
-          </a>
+      {/* Navbar */}
+      <nav className={styles.navbar}>
+        <div className={styles.navContainer}>
+          <Link href="/" className={styles.logoLink}>
+            <Image
+              src="/images/poditfy-logo.png"
+              alt="Podify Logo"
+              width={120}
+              height={60}
+              priority
+            />
+          </Link>
+          
+          <div className={styles.navLinks}>
+            <Link href="/" className={styles.navItem}>Accueil</Link>
+            <Link href="/episodes" className={styles.navItem}>Épisodes</Link>
+            <Link href="/about" className={styles.navItem}>À propos</Link>
+            <Link href="/contact" className={styles.navItem}>Contact</Link>
+          </div>
         </div>
-<br></br>
-        <div className={styles.cardsContainer}>
-          <h2>Épisodes récents</h2>
-          <div className={styles.cards}>
-            <div className={styles.card}>
-              <Image
-                className={styles.cardImage}
-                src="/images/episode1.jpg" // Image d'épisode
-                alt="Épisode 1"
-                width={300}
-                height={200}
-              />
-              <h3>Épisode 1: Introduction au podcast</h3>
-              <p>Découvrez l'univers de Poditfy et comment ça fonctionne.</p>
-              <a href="/episode1" className={styles.cardButton}>Écouter l'épisode</a>
+      </nav>
+
+      <main className={styles.main}>
+        {/* Hero Section */}
+        <section className={styles.hero}>
+          <h1 className={styles.heroTitle}>
+            Plongez dans l'univers des 
+            <span className={styles.highlight}> podcasts</span>
+          </h1>
+          <p className={styles.heroSubtitle}>
+            Découvrez des histoires captivantes, des débats passionnants 
+            et des conversations inspirantes.
+          </p>
+          
+          <div className={styles.ctas}>
+            <Link
+              href="/episodes"
+              className={styles.primaryCta}
+            >
+              Explorer les épisodes
+              <span className={styles.ctaIcon}>🎧</span>
+            </Link>
+            <Link
+              href="/about"
+              className={styles.secondaryCta}
+            >
+              Découvrir Podify →
+            </Link>
+          </div>
+        </section>
+
+        {/* Featured Episodes */}
+        <section className={styles.featured}>
+          <h2 className={styles.sectionTitle}>Épisodes populaires</h2>
+          
+          <div className={styles.cardsContainer}>
+            {/* Episode Cards */}
+            {[1, 2, 3].map((episode) => (
+              <article key={episode} className={styles.card}>
+                <div className={styles.cardImageContainer}>
+                  <Image
+                    src={`/images/episode${episode}.jpg`}
+                    alt={`Épisode ${episode}`}
+                    width={400}
+                    height={250}
+                    className={styles.cardImage}
+                  />
+                  <div className={styles.playOverlay}>
+                    <button className={styles.playButton}>
+                      ▶ Écouter
+                    </button>
+                  </div>
+                </div>
+                
+                <div className={styles.cardContent}>
+                  <h3 className={styles.cardTitle}>
+                    Épisode {episode}: Le futur du podcasting
+                  </h3>
+                  <p className={styles.cardDescription}>
+                    Une exploration approfondie des tendances actuelles 
+                    et futures dans l'industrie du podcasting.
+                  </p>
+                  <div className={styles.cardMeta}>
+                    <span className={styles.duration}>45 min</span>
+                    <span className={styles.category}>Technologie</span>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      {/* Footer amélioré */}
+      <footer className={styles.footer}>
+        <div className={styles.footerContent}>
+          <div className={styles.footerSection}>
+            <Image
+              src="/images/poditfy-logo.png"
+              alt="Podify Logo"
+              width={100}
+              height={50}
+            />
+            <p className={styles.footerText}>
+              Votre plateforme de podcasts préférée depuis 2024.
+            </p>
+          </div>
+          
+          <div className={styles.footerLinks}>
+            <div className={styles.linkGroup}>
+              <h4>Navigation</h4>
+              <Link href="/">Accueil</Link>
+              <Link href="/episodes">Épisodes</Link>
+              <Link href="/about">À propos</Link>
             </div>
-            <div className={styles.card}>
-              <Image
-                className={styles.cardImage}
-                src="/images/episode2.jpg" // Image d'épisode
-                alt="Épisode 2"
-                width={300}
-                height={200}
-              />
-              <h3>Épisode 2: Le monde du podcasting</h3>
-              <p>Plongez dans l'univers du podcasting et ses enjeux.</p>
-              <a href="/episode2" className={styles.cardButton}>Écouter l'épisode</a>
-            </div>
-            <div className={styles.card}>
-              <Image
-                className={styles.cardImage}
-                src="/images/episode3.jpg" // Image d'épisode
-                alt="Épisode 3"
-                width={300}
-                height={200}
-              />
-              <h3>Épisode 3: Comment créer votre podcast</h3>
-              <p>Apprenez à créer et diffuser votre propre podcast.</p>
-              <a href="/episode3" className={styles.cardButton}>Écouter l'épisode</a>
+            <div className={styles.linkGroup}>
+              <h4>Légal</h4>
+              <Link href="/privacy">Confidentialité</Link>
+              <Link href="/terms">Conditions d'utilisation</Link>
             </div>
           </div>
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://example.com/contact"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Contactez-nous
-        </a>
-        <a
-          href="https://example.com/privacy-policy"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Politique de confidentialité
-        </a>
-        <a
-          href="https://example.com/terms"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Conditions d'utilisation
-        </a>
+        
+        <div className={styles.footerBottom}>
+          <p>© 2024 Podify. Tous droits réservés.</p>
+        </div>
       </footer>
     </div>
   );
