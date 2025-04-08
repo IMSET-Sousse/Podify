@@ -1,105 +1,170 @@
-# Cahier des Charges - Podcast Platform "Podify"
+# Spécifications : Projet de Plateforme de Podcasts – Podify
+## Description du Projet
+Podify est une application web destinée à l’écoute, la gestion et la découverte de podcasts. Elle vise à offrir une expérience utilisateur fluide, moderne et interactive, en s’appuyant sur Next.js pour le frontend, une API tierce (type Listen Notes) pour les données de podcast, et Firebase ou Supabase pour la gestion des utilisateurs, playlists et favoris. L’accent est mis sur la performance, l’accessibilité et l’intégration de fonctionnalités sociales et de monétisation.
 
-## 1. Présentation du Projet
-### 1.1 Contexte
-**Podify** est une application web permettant aux utilisateurs de découvrir, écouter et gérer leurs podcasts préférés. Cette plateforme vise à offrir une expérience fluide et interactive pour l'exploration et l'écoute de podcasts.
+## Analyse des Exigences
+### Objectifs Clés
+Proposer une interface agréable pour explorer et écouter des podcasts.
 
-### 1.2 Objectifs
-- Offrir une **expérience utilisateur optimale** avec une navigation intuitive.
-- Permettre aux utilisateurs de **rechercher et explorer** des podcasts selon leurs préférences.
-- Mettre en place une **expérience d'écoute interactive** avec gestion des playlists et favoris.
-- Assurer une interface **moderne, responsive et performante** avec **Next.js** et **TailwindCSS**.
-- Intégrer des **interactions sociales** et un **système de monétisation**.
+Intégrer un moteur de recherche avec filtres avancés.
 
-## 2. Structure et Pages de l'Application
+Permettre la gestion de playlists et favoris personnalisés.
 
-### 2.1 Pages Principales (Accès Public)
-#### 1. Accueil
-- Présentation de la plateforme.
-- Affichage des podcasts populaires et recommandations personnalisées.
-- Accès rapide aux catégories (musique, éducation, tech, etc.).
+Intégrer des fonctionnalités sociales (commentaires, likes) et des systèmes de dons ou abonnements.
 
-#### 2. Page de Recherche
-- Champ de recherche avancée.
-- Filtres (catégorie, popularité, date, etc.).
-- Suggestions basées sur l'historique d'écoute.
+Assurer une expérience responsive, rapide et accessible.
 
-#### 3. Page d’un Podcast
-- Informations sur le podcast (titre, description, créateur).
-- Liste des épisodes disponibles.
-- Option "Suivre" ou "Ajouter aux favoris".
+### Cibles Principales
+Auditeurs de podcasts (grand public, passionnés de culture, tech, etc.).
 
-#### 4. Page d’un Épisode
-- Lecture en streaming.
-- Détails et description.
-- Commentaires et interactions.
+Créateurs de contenu audio souhaitant diffuser leurs épisodes.
 
-### 2.2 Pages Utilisateurs (Connexion Requise)
-#### 5. Inscription & Connexion
-- Formulaire d'inscription.
-- Connexion via email ou réseaux sociaux.
+Administrateurs ou modérateurs gérant les contenus et statistiques.
 
-#### 6. Profil Utilisateur
-- Informations personnelles et paramètres.
-- Historique d'écoute et podcasts suivis.
-- Gestion des favoris.
+### Tendances du Marché
+Explosion de l’audience des podcasts (mobilité, formats courts).
 
-#### 7. Gestion des Playlists
-- Liste des playlists créées.
-- Ajout/Suppression d’épisodes.
+Besoin de plateformes personnalisables et sociales.
 
-#### 8. Page "Mes Téléchargements"
-- Liste des épisodes disponibles hors ligne.
-- Option de suppression.
+Monétisation directe entre créateurs et auditeurs (dons, abonnements).
 
-### 2.3 Pages Administratives
-#### 9. Dashboard Admin
-- Modération des podcasts et commentaires.
-- Statistiques d'écoute et tendances des utilisateurs.
-- Gestion des publicités et partenariats.
+## Analyse des Solutions
+### Choix Technologiques
+Frontend : Next.js (React) pour le rendu rapide et SEO-friendly.
 
-#### 10. Gestion des Créateurs
-- Ajout/Suppression de créateurs et contenus.
-- Suivi des abonnements et revenus.
+UI : TailwindCSS pour un design rapide, responsive et élégant.
 
-### 2.4 Pages Monétisation & Engagement
-#### 11. Abonnement Premium
-- Explication des offres (gratuit vs premium).
-- Page de paiement.
+Backend/API : API tierce (Listen Notes ou similaire) pour le contenu audio.
 
-#### 12. Système de Dons
-- Interface permettant aux utilisateurs de soutenir les créateurs.
+Base de données : Firebase / Supabase (gestion utilisateurs, playlists).
 
-## 3. Architecture Technique
+Stockage temporaire : LocalStorage pour une expérience fluide offline.
 
-### 3.1 Stack Technologique
-- **Frontend** : Next.js + TailwindCSS
-- **Backend** : API externe (Listen Notes API ou autre API de podcasts)
-- **Base de données** : Firebase / Supabase (pour les playlists et favoris)
+### Avantages de la Solution
+Stack moderne et performante.
 
-### 3.2 Hébergement & Déploiement
-- **Frontend** : Vercel
-- **Base de données** : Firestore / Supabase
-- **Stockage des favoris** : LocalStorage pour session courte + BDD pour persistance
+Hébergement simple et rapide (Vercel).
 
-## 4. Contraintes et Exigences
-### 4.1 Performance & Accessibilité
-- Temps de chargement optimisé (<2s sur les pages principales).
-- Interface **responsive** et accessible (WCAG 2.1).
+Accès rapide aux données via API.
 
-### 4.2 Sécurité
-- Protection des données utilisateurs (HTTPS, authentification sécurisée).
+Évolutif : ajout futur de recommandations IA, analytics, etc.
 
+## Besoins Fonctionnels
+### Page d’Accueil
+Présentation de la plateforme.
 
-## 5. Planning Prévisionnel
-| Étape | Tâches | Durée Estimée |
-|--------|-----------|----------------|
-| Conception UI/UX | Maquettage et Wireframes | 2 semaines |
-| Développement Frontend | Implémentation avec Next.js & Tailwind | 3 semaines |
-| Intégration API | Connexion avec Listen Notes API | 1 semaine |
-| Implémentation des fonctionnalités sociales et de monétisation | Ajout des interactions et paiements | 2 semaines |
-| Tests & Déploiement | Tests UI, debug et mise en ligne | 2 semaines |
+Sélection des podcasts populaires.
 
-## 6. Conclusion
-Ce projet **Podcast Platform** vise à offrir une solution complète et moderne pour la gestion et l’écoute de podcasts. En s’appuyant sur des technologies récentes et performantes, il garantira une **expérience utilisateur fluide et engageante**. Avec l'ajout d'un **mode hors-ligne**, d'**options de monétisation** et d'**interactions sociales**, la plateforme pourra se démarquer face à la concurrence et attirer un large public.
+Recommandations personnalisées.
 
+### Recherche et Filtres
+Moteur de recherche avec autocomplétion.
+
+Filtres par catégorie, popularité, date, etc.
+
+Suggestions selon l’historique d’écoute.
+
+### Fiche Podcast
+Infos du podcast (titre, créateur, description, nombre d’épisodes).
+
+Option de suivre / ajouter aux favoris.
+
+### Page Épisode
+Lecture en streaming.
+
+Détails de l’épisode.
+
+Zone de commentaires.
+
+### Espace Utilisateur
+Création de compte, connexion (email, réseaux sociaux).
+
+Profil personnel (historique, favoris, playlists).
+
+Gestion des paramètres.
+
+### Playlists et Téléchargements
+Création de playlists personnalisées.
+
+Téléchargement pour lecture offline.
+
+Suppression ou gestion des fichiers.
+
+### Administration
+Tableau de bord de modération.
+
+Gestion des créateurs et contenus.
+
+Suivi des statistiques et des revenus.
+
+### Monétisation
+Page abonnements premium (paiement Stripe, etc.).
+
+Système de dons pour soutenir les créateurs.
+
+## Besoins Non Fonctionnels
+### Performance
+Chargement des pages < 2s.
+
+Optimisation des requêtes API et Firebase.
+
+### Accessibilité
+Design responsive mobile-first.
+
+Conformité WCAG 2.1 (contrastes, navigation clavier...).
+
+### Sécurité
+Authentification sécurisée (Firebase Auth).
+
+Protection des données personnelles (HTTPS, gestion des rôles).
+
+### Scalabilité
+Stack extensible (ajout de nouvelles sources de podcasts).
+
+Système de gestion multi-utilisateurs (créateurs, admins, listeners).
+
+## Spécifications Techniques
+ ### Backend / API
+Intégration de Listen Notes API (ou équivalent).
+
+Gestion des utilisateurs via Firebase Auth.
+
+Base de données : Firestore ou Supabase (NoSQL).
+
+### Frontend
+Framework : Next.js (React SSR).
+
+UI avec TailwindCSS.
+
+Composants dynamiques (lecteur audio, modales, sliders...).
+
+Routes protégées selon rôle utilisateur.
+
+### Base de Données
+Collections : Utilisateurs, Playlists, Favoris, Commentaires.
+
+Indexation pour recherche rapide.
+
+Liens utilisateurs ↔ podcasts ↔ épisodes.
+
+## Livrables
+### Application Fonctionnelle
+Navigation fluide, responsive, avec lecteur audio intégré.
+
+Gestion complète des favoris, playlists, téléchargements.
+
+Interface utilisateur et admin.
+
+### Documentation
+Guide de déploiement (Vercel, Firebase).
+
+Manuel d’utilisation pour utilisateurs et admins.
+
+Documentation API, composants, logique métier.
+
+### Code Source
+Organisation modulaire par pages et composants.
+
+Utilisation de Git (branches par fonctionnalités).
+
+Conventions de code, commentaires, tests unitaires (Jest / RTL).
