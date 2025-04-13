@@ -1,0 +1,33 @@
+/* Import Tailwind's base, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom global styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f4f8; /* Light background */
+  color: #333333; /* Dark text */
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Add some default padding and margin adjustments */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Customize the links' color */
+a:hover {
+  text-decoration: underline;
+}
