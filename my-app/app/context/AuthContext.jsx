@@ -1,28 +1,21 @@
-import { createContext, useState, useEffect } from 'react';
-import { auth } from '../lib/firebase'; // Import de la configuration Firebase pour l'authentification
-import { onAuthStateChanged } from 'firebase/auth';
+import { createContext, useState, useContext } from 'react';
 
-// Création du contexte d'authentification
-export const AuthContext = createContext();
+// Create context with a default value
+const AuthContext = createContext({
+  user: null,
+  setUser: () => {},
+});
 
-export default function AuthProvider({ children }) {
-  const [user, setUser] = useState(null); // État pour stocker l'utilisateur actuel
-  const [loading, setLoading] = useState(true); // État pour gérer le chargement de l'authentification
+// Create provider component
+export const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null); // Initial state for user
 
-  useEffect(() => {
-    // Suivi de l'état de l'utilisateur en temps réel
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser); // Met à jour l'utilisateur quand l'état change
-      setLoading(false); // Lorsque l'état est chargé, met fin au chargement
-    });
-
-    return () => unsubscribe(); // Nettoyage lors du démontage du composant
-  }, []);
-
-  // Retourne le provider avec la valeur du contexte
   return (
-    <AuthContext.Provider value={{ user, loading }}>
+    <AuthContext.Provider value={{ user, setUser }}>
       {children}
     </AuthContext.Provider>
   );
-}
+};
+
+// Create custom hook for using context
+export const useAuth = () => useContext(AuthContext);

@@ -1,19 +1,36 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
-const usePlayer = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [currentPodcast, setCurrentPodcast] = useState(null);
+export const usePlayer = () => {
+  const [currentTrack, setCurrentTrack] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const token = localStorage.getItem('authToken'); // Or wherever you store the token
 
-  const playPodcast = (podcast) => {
-    setCurrentPodcast(podcast);
-    setIsPlaying(true);
-  };
+  useEffect(() => {
+    if (token) {
+      const config = {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+      };
 
-  const stopPodcast = () => {
-    setIsPlaying(false);
-  };
+      const fetchTrack = async () => {
+        try {
+          const response = await axios.get('YOUR_API_URL/track', config);
+          setCurrentTrack(response.data); // Set the track data
+          setLoading(false);
+        } catch (err) {
+          setError(err);
+          setLoading(false);
+        }
+      };
 
-  return { playPodcast, stopPodcast, isPlaying, currentPodcast };
+      fetchTrack();
+    } else {
+      setLoading(false); // If no token, just stop loading
+    }
+  }, [token]);
+
+  return { currentTrack, loading, error };
 };
-
-export default usePlayer;
