@@ -1,13 +1,12 @@
 // my-app/pages/index.jsx
 import Link from 'next/link'; // Import Link to enable navigation within the app
 import '../styles/globals.css';
-import Header from '../app/components/Header'; // Import Header component
-import Footer from '../app/components/Footer'; // Import Footer component
+import Header from '@/app/components/Header'; // Import Header component
+import Footer from '@/app/components/Footer'; // Import Footer component
 
 export default function Home() {
   return (
     <div>
-      <Header /> {/* Include the Header component */}
       
       <div className="text-center p-10">
         <h1 className="text-4xl font-bold">Bienvenue sur Podify 🎙️</h1>

@@ -1,8 +1,8 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-      domains: ['via.placeholder.com'], // À adapter selon vos sources d'images
-    },
-  };
-  
-  export default nextConfig;
+  reactStrictMode: true,
+  experimental: {
+    appDir: true, // App Router support
+  },
+};
+
+export default nextConfig;

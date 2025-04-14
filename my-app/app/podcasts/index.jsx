@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import listenNotesConfig from '../lib/listenNotesApi'; // Import your API configuration
+import listenNotesConfig from '@app/lib/listenNotesApi'; // Import your API configuration
 import '../styles/globals.css';  // Make sure this points to the correct path
 
 const Podcast = () => {

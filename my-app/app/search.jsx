@@ -1,6 +1,6 @@
 import { useState } from 'react'; // Utilisation du hook useState pour gérer l'état de la recherche
-import usePlayer from '../app/hooks/usePlayer'; // Utilisation du hook personnalisé pour gérer le lecteur de podcast
-import api from '../app/lib/listenNotesApi'; // Utilisation de l'API ListenNotes pour récupérer les podcasts
+import { usePlayer } from '@app/hooks/usePlayer';
+import api from '@app/lib/listenNotesApi'; // Utilisation de l'API ListenNotes pour récupérer les podcasts
 import '../styles/globals.css'; // Correct path for index.jsx in the pages folder
 
 export default function Search() {

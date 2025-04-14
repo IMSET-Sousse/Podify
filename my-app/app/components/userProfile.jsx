@@ -1,6 +1,6 @@
 // UserProfile.js
 import React from 'react';
-import { useAuth } from './hooks/useAuth'; // Import the custom hook
+import { useAuth } from '@app/hooks/useAuth'; // Import the custom hook
 
 const UserProfile = () => {
   // Call the custom hook inside the component

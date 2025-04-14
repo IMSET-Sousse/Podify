@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'; // Import des hooks useState et useEffect
-import useAuth from '../../app/hooks/useAuth'; // Import du hook personnalisé pour gérer l'authentification
+import useAuth from '@app/hooks/useAuth'; // Import du hook personnalisé pour gérer l'authentification
 import '../styles/globals.css';  // Make sure this points to the correct path
 
 export default function Playlists() {

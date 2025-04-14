@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'; // Import des hooks useState et useEffect
-import useAuth from '../../app/hooks/useAuth'; // Import du hook personnalisé pour l'authentification
+import useAuth from '@app/hooks/useAuth'; // Import du hook personnalisé pour l'authentification
 
 export default function UserPlaylists() {
   const [playlists, setPlaylists] = useState([]); // État pour stocker les playlists de l'utilisateur

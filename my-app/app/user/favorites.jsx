@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'; // Import des hooks useState et useEffect
-import useAuth from '../../app/hooks/useAuth'; // Import du hook personnalisé pour l'authentification
+import useAuth from '@app/hooks/useAuth'; // Import du hook personnalisé pour l'authentification
 
 export default function UserFavorites() {
   const [favorites, setFavorites] = useState([]); // État pour stocker les podcasts favoris

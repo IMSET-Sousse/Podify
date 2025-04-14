@@ -7,15 +7,15 @@ export default function AdminDashboard() {
       <div className="mt-6">
         <h3 className="text-xl font-semibold">Gestion des utilisateurs</h3>
         {/* Lien vers la gestion des utilisateurs */}
-        <Link href="/admin/users">
-          <a className="text-blue-500 mt-2 inline-block">Voir tous les utilisateurs</a>
+        <Link href="/admin/users" className="text-blue-500 mt-2 inline-block">
+          Voir tous les utilisateurs
         </Link>
       </div>
       <div className="mt-6">
         <h3 className="text-xl font-semibold">Gestion des podcasts</h3>
         {/* Lien vers la gestion des podcasts */}
-        <Link href="/admin/podcasts">
-          <a className="text-blue-500 mt-2 inline-block">Voir tous les podcasts</a>
+        <Link href="/admin/podcasts" className="text-blue-500 mt-2 inline-block">
+          Voir tous les podcasts
         </Link>
       </div>
     </div>

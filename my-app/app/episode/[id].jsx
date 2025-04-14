@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'; // Import des hooks useState et useEffect
-import usePlayer from '../../app/hooks/usePlayer'; // Import du hook pour gérer la lecture des épisodes
-import api from '../../app/lib/listenNotesApi'; // Import de l'API ListenNotes pour récupérer les épisodes
+import usePlayer from '@app/hooks/usePlayer'; // Import du hook pour gérer la lecture des épisodes
+import api from '@app/lib/listenNotesApi'; // Import de l'API ListenNotes pour récupérer les épisodes
 
 export default function Episode({ episodeId }) {
   const [episode, setEpisode] = useState(null); // État pour stocker les informations de l'épisode
