@@ -1,0 +1,17 @@
+@startuml
+node "Navigateur Utilisateur" {
+  component "Next.js UI (Vercel)"
+}
+
+node "Backend externe" {
+  component "Listen Notes API"
+}
+
+node "Firebase/Supabase" {
+  component "Auth & DB"
+}
+
+"Navigateur Utilisateur" --> "Next.js UI (Vercel)"
+"Next.js UI (Vercel)" --> "Listen Notes API"
+"Next.js UI (Vercel)" --> "Auth & DB"
+@enduml

@@ -1,6 +1,31 @@
+<<<<<<< HEAD
 /* Tailwind base styles */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
+=======
+/* Import Tailwind's base, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Custom global styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f4f8; /* Light background */
+  color: #333333; /* Dark text */
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Add some default padding and margin adjustments */
+>>>>>>> 2cdcf18e034f21b624fea2b58d9c25f12acee4a7
 * {
   margin: 0;
   padding: 0;
