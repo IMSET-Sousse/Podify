@@ -1,60 +1,112 @@
-// my-app/pages/index.jsx
-import Link from 'next/link'; // Import Link to enable navigation within the app
-import '../styles/globals.css';
-import Header from '@/app/components/Header'; // Import Header component
-import Footer from '@/app/components/Footer'; // Import Footer component
+"use client"; // Ajout de la directive "use client" pour éviter l'erreur liée aux hooks React
+
+import { useState } from "react";
+import { FaUser } from "react-icons/fa"; // Importation de l'icône utilisateur
+import Image from "next/image";
+import Link from "next/link";
+import styles from "../styles/page.module.css";
 
 export default function Home() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
+  
+  const categories = ["Musique", "Éducation", "Technologie", "Histoire"];
+  const popularPodcasts = [
+    { id: 1, title: "Le Futur du Podcasting", creator: "John Doe", description: "Les dernières tendances dans l'industrie du podcast.", image: "/images/episode1.jpg" },
+    { id: 2, title: "Technologie et Innovations", creator: "Alice Smith", description: "Découvrez les dernières innovations dans le monde tech.", image: "/images/episode2.jpg" },
+    { id: 3, title: "L'Éducation en 2025", creator: "Marc Dupont", description: "Comment l'éducation évolue avec la technologie.", image: "/images/episode3.jpg" },
+  ];
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
   return (
-    <div>
-      
-      <div className="text-center p-10">
-        <h1 className="text-4xl font-bold">Bienvenue sur Podify 🎙️</h1>
-        <p className="mt-4 text-xl">
-          Explorez, écoutez et gérez vos podcasts favoris sur notre plateforme.
-        </p>
-
-        <p className="mt-4 text-lg">
-          Découvrez les podcasts les plus populaires, créez vos propres playlists et restez à jour avec vos podcasts favoris !
-        </p>
-
-        <div className="mt-8">
-          <Link href="/search">
-            <span className="text-blue-500 hover:underline">Chercher des podcasts</span>
+    <div className={styles.page}>
+      {/* Navbar */}
+      <nav className={styles.navbar}>
+        <div className={styles.navContainer}>
+          <Link href="/" className={styles.logoLink}>
+            <Image
+              src="/images/poditfy-logo.png"
+              alt="Podify Logo"
+              width={120}
+              height={60}
+              priority
+            />
+             <h1 className={styles.brandName}>Podify</h1> {/* Le texte "Podify" */}
           </Link>
-        </div>
-
-        <h2 className="mt-12 text-2xl font-semibold">Podcasts en vedette</h2>
-        <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <div className="p-4 border rounded-lg">
-            <h3 className="text-xl font-bold">Podcast 1</h3>
-            <p>Explorez ce podcast captivant qui parle de la culture moderne et de la technologie.</p>
-            <Link href="/podcast/1" className="text-blue-500 hover:underline">Voir le podcast</Link>
-          </div>
-
-          <div className="p-4 border rounded-lg">
-            <h3 className="text-xl font-bold">Podcast 2</h3>
-            <p>Un podcast dédié aux interviews de personnalités influentes dans l'industrie musicale.</p>
-            <Link href="/podcast/2" className="text-blue-500 hover:underline">Voir le podcast</Link>
-          </div>
-
-          <div className="p-4 border rounded-lg">
-            <h3 className="text-xl font-bold">Podcast 3</h3>
-            <p>Un podcast éducatif sur l'environnement et la durabilité.</p>
-            <Link href="/podcast/3" className="text-blue-500 hover:underline">Voir le podcast</Link>
+          <div className={styles.navLinks}>
+            <Link href="/" className={styles.navItem}>Accueil</Link>
+            <Link href="/about" className={styles.navItem}>A propos</Link>
+            {/* Ajout du lien Utilisateur avec l'icône */}
+            <Link href="/user" className={styles.navItem}>
+              <FaUser className={styles.icon} /> {/* Icône utilisateur */}
+            </Link>
           </div>
         </div>
+      </nav>
 
-        <div className="mt-12">
-          <p className="text-lg">Rejoignez Podify dès maintenant et commencez à écouter vos podcasts préférés !</p>
-          <div className="mt-4">
-            <Link href="/login" className="text-blue-500 hover:underline mr-4">Se connecter</Link>
-            <Link href="/register" className="text-blue-500 hover:underline">S'inscrire</Link>
+      {/* Main Content */}
+      <main className={styles.main}>
+        {/* Section Recherche */}
+        <section className={styles.searchSection}>
+          <input
+            type="text"
+            className={styles.searchInput}
+            placeholder="Rechercher des podcasts..."
+            value={searchQuery}
+            onChange={handleSearchChange}
+          />
+          <div className={styles.categoryFilters}>
+            {categories.map((category) => (
+              <button
+                key={category}
+                className={`${styles.filterButton} ${selectedCategory === category ? styles.selected : ""}`}
+                onClick={() => setSelectedCategory(category)}
+              >
+                {category}
+              </button>
+            ))}
           </div>
-        </div>
-      </div>
+        </section>
 
-      <Footer /> {/* Include the Footer component */}
+        {/* Section Podcasts Populaires */}
+        <section className={styles.featured}>
+          <h2 className={styles.sectionTitle}>Podcasts populaires</h2>
+          <div className={styles.podcastGrid}>
+            {popularPodcasts.map((podcast) => (
+              <article key={podcast.id} className={styles.podcastCard}>
+                <div className={styles.cardImageContainer}>
+                  <Image
+                    src={podcast.image}
+                    alt={podcast.title}
+                    width={400}
+                    height={250}
+                    className={styles.podcastImage}
+                  />
+                  <div className={styles.playOverlay}>
+                    <button className={styles.playButton}>🎧</button>
+                  </div>
+                </div>
+                <div className={styles.cardContent}>
+                  <h3 className={styles.podcastTitle}>{podcast.title}</h3>
+                  <p className={styles.podcastDescription}>{podcast.description}</p>
+                  <p className={styles.podcastCreator}>Créé par {podcast.creator}</p>
+                  <Link href={`/podcast/${podcast.id}`} className={styles.cardLink}>Voir le podcast</Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer className={styles.footer}>
+        <div className={styles.footerContent}>
+          <p className={styles.footerText}>© 2025 Podify. Tous droits réservés.</p>
+        </div>
+      </footer>
     </div>
   );
 }
