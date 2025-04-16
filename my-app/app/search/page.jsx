@@ -1,7 +1,7 @@
 import { useState } from 'react'; // Utilisation du hook useState pour gérer l'état de la recherche
 import { usePlayer } from '@app/hooks/usePlayer';
 import api from '@app/lib/listenNotesApi'; // Utilisation de l'API ListenNotes pour récupérer les podcasts
-import '../styles/globals.css'; // Correct path for index.jsx in the pages folder
+import '@/styles/globals.css'; // Correct path for index.jsx in the pages folder
 
 export default function Search() {
   const [query, setQuery] = useState(''); // État pour la recherche de podcast

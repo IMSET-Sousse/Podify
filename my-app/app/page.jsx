@@ -1,10 +1,11 @@
 "use client"; // Ajout de la directive "use client" pour éviter l'erreur liée aux hooks React
 
 import { useState } from "react";
-import { FaUser } from "react-icons/fa"; // Importation de l'icône utilisateur
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/page.module.css";
+import styles from "@/styles/page.module.css";
+import Navbar from "@/app/components/Navbar"
+
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -23,30 +24,8 @@ export default function Home() {
 
   return (
     <div className={styles.page}>
-      {/* Navbar */}
-      <nav className={styles.navbar}>
-        <div className={styles.navContainer}>
-          <Link href="/" className={styles.logoLink}>
-            <Image
-              src="/images/poditfy-logo.png"
-              alt="Podify Logo"
-              width={120}
-              height={60}
-              priority
-            />
-             <h1 className={styles.brandName}>Podify</h1> {/* Le texte "Podify" */}
-          </Link>
-          <div className={styles.navLinks}>
-            <Link href="/" className={styles.navItem}>Accueil</Link>
-            <Link href="/about" className={styles.navItem}>A propos</Link>
-            {/* Ajout du lien Utilisateur avec l'icône */}
-            <Link href="/user" className={styles.navItem}>
-              <FaUser className={styles.icon} /> {/* Icône utilisateur */}
-            </Link>
-          </div>
-        </div>
-      </nav>
-
+      
+      <Navbar/>
       {/* Main Content */}
       <main className={styles.main}>
         {/* Section Recherche */}
