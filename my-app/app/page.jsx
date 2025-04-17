@@ -1,6 +1,10 @@
-"use client"; // Ajout de la directive "use client" pour éviter l'erreur liée aux hooks React
+"use client";
 
 import { useState } from "react";
+<<<<<<< HEAD
+import { FaUser } from "react-icons/fa";
+=======
+>>>>>>> 3f617241658c38bd5595819403574aa143bcc288
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/styles/page.module.css";
@@ -10,6 +14,32 @@ import { FaPlay, FaHeadphones, FaUsers, FaStar, FaChartLine, FaUserPlus, FaCalen
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
+<<<<<<< HEAD
+
+  const categories = ["Musique", "Éducation", "Technologie", "Histoire"];
+  const popularPodcasts = [
+    {
+      id: 1,
+      title: "Le Futur du Podcasting",
+      creator: "John Doe",
+      description: "Les dernières tendances dans l'industrie du podcast.",
+      image: "/images/episode1.jpg",
+    },
+    {
+      id: 2,
+      title: "Technologie et Innovations",
+      creator: "Alice Smith",
+      description: "Découvrez les dernières innovations dans le monde tech.",
+      image: "/images/episode2.jpg",
+    },
+    {
+      id: 3,
+      title: "L'Éducation en 2025",
+      creator: "Marc Dupont",
+      description: "Comment l'éducation évolue avec la technologie.",
+      image: "/images/episode3.jpg",
+    },
+=======
   
   const categories = [
     { 
@@ -206,6 +236,7 @@ export default function Home() {
       releaseDate: "2024-02-17",
       isNew: false
     }
+>>>>>>> ee9ef6798b5eccd9c2db69718f7c4f08c51c2992
   ];
 
   const handleSearchChange = (e) => {
@@ -214,6 +245,53 @@ export default function Home() {
 
   return (
     <div className={styles.page}>
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <nav className={styles.navbar}>
+        <div className={styles.navContainer}>
+          <Link href="/" className={styles.logoLink}>
+            <Image
+              src="/images/poditfy-logo.png"
+              alt="Podify Logo"
+              width={120}
+              height={60}
+              priority
+            />
+            <h1 className={styles.brandName}>Podify</h1>
+          </Link>
+          <div className={styles.navLinks}>
+            <Link href="/" className={styles.navItem}>Accueil</Link>
+            <Link href="/about" className={styles.navItem}>A propos</Link>
+            <Link href="/user" className={styles.navItem}>
+              <FaUser className={styles.icon} />
+            </Link>
+          </div>
+        </div>
+      </nav>
+
+=======
+      
+      <Navbar/>
+      {/* Main Content */}
+>>>>>>> 3f617241658c38bd5595819403574aa143bcc288
+      <main className={styles.main}>
+        <section className={styles.searchSection}>
+          <input
+            type="text"
+            className={styles.searchInput}
+            placeholder="Rechercher des podcasts..."
+            value={searchQuery}
+            onChange={handleSearchChange}
+          />
+          <div className={styles.categoryFilters}>
+            {categories.map((category) => (
+              <button
+                key={category}
+                className={`${styles.filterButton} ${
+                  selectedCategory === category ? styles.selected : ""
+                }`}
+                onClick={() => setSelectedCategory(category)}
+=======
       <Navbar/>
       <main className={styles.main}>
         {/* Hero Section */}
@@ -265,6 +343,7 @@ export default function Home() {
                 className={`${styles.categoryCard} ${selectedCategory === category.name ? styles.selected : ""}`}
                 onClick={() => setSelectedCategory(category.name)}
                 style={{ '--category-color': category.color }}
+>>>>>>> ee9ef6798b5eccd9c2db69718f7c4f08c51c2992
               >
                 <div className={styles.categoryIcon}>
                   <span className={styles.iconEmoji}>{category.icon}</span>
@@ -279,6 +358,10 @@ export default function Home() {
           </div>
         </section>
 
+<<<<<<< HEAD
+        <section className={styles.featured}>
+          <h2 className={styles.sectionTitle}>Podcasts populaires</h2>
+=======
         {/* Featured Creators Section */}
         <section className={styles.creators}>
           <div className={styles.sectionHeader}>
@@ -382,6 +465,7 @@ export default function Home() {
             <h2 className={styles.sectionTitle}>Podcasts Tendance</h2>
             <p className={styles.sectionSubtitle}>Les podcasts les plus populaires cette semaine</p>
           </div>
+>>>>>>> ee9ef6798b5eccd9c2db69718f7c4f08c51c2992
           <div className={styles.podcastGrid}>
             {trendingPodcasts.map((podcast) => (
               <article key={podcast.id} className={styles.podcastCard}>
@@ -409,6 +493,17 @@ export default function Home() {
                     </div>
                   </div>
                   <p className={styles.podcastDescription}>{podcast.description}</p>
+<<<<<<< HEAD
+                  <p className={styles.podcastCreator}>
+                    Créé par {podcast.creator}
+                  </p>
+                  <Link
+                    href={`/podcast/${podcast.id}`}
+                    className={styles.cardLink}
+                  >
+                    Voir le podcast
+                  </Link>
+=======
                   <div className={styles.cardFooter}>
                     <div className={styles.creatorInfo}>
                       <p className={styles.podcastCreator}>Par {podcast.creator}</p>
@@ -418,6 +513,7 @@ export default function Home() {
                       Écouter
                     </Link>
                   </div>
+>>>>>>> ee9ef6798b5eccd9c2db69718f7c4f08c51c2992
                 </div>
               </article>
             ))}

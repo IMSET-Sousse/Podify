@@ -1,17 +1,31 @@
+/* Import custom fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
 /* Import Tailwind's base, components, and utilities */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 /* Custom global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Inter', sans-serif;
+}
+
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f0f4f8; /* Light background */
-  color: #333333; /* Dark text */
+  background-color: #f7fafc;
+  color: #4a5568;
   line-height: 1.6;
 }
 
 h1, h2, h3 {
-  font-family: 'Helvetica', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: bold;
 }
 
@@ -19,14 +33,100 @@ a {
   text-decoration: none;
 }
 
-/* Add some default padding and margin adjustments */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Utility classes */
+.bg-gray-100 {
+  background-color: #f7fafc;
 }
 
-/* Customize the links' color */
-a:hover {
+.text-gray-900 {
+  color: #2d3748;
+}
+
+.text-gray-700 {
+  color: #4a5568;
+}
+
+.text-gray-600 {
+  color: #718096;
+}
+
+.text-blue-500 {
+  color: #4299e1;
+}
+
+.text-blue-500:hover {
+  color: #3182ce;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.font-extrabold {
+  font-weight: 800;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.p-4, .p-6, .p-10 {
+  padding: 1rem;
+}
+
+.mt-4, .mt-8, .mt-12 {
+  margin-top: 1rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.border {
+  border-width: 1px;
+  border-color: #e2e8f0;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.transition-shadow {
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.sm\:grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.md\:grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.hover\:underline:hover {
   text-decoration: underline;
 }
