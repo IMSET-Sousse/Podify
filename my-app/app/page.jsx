@@ -1,10 +1,15 @@
 "use client";
 
 import { useState } from "react";
+<<<<<<< HEAD
 import { FaUser } from "react-icons/fa";
+=======
+>>>>>>> 3f617241658c38bd5595819403574aa143bcc288
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/page.module.css";
+import styles from "@/styles/page.module.css";
+import Navbar from "@/app/components/Navbar"
+
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -41,6 +46,7 @@ export default function Home() {
 
   return (
     <div className={styles.page}>
+<<<<<<< HEAD
       <nav className={styles.navbar}>
         <div className={styles.navContainer}>
           <Link href="/" className={styles.logoLink}>
@@ -63,6 +69,11 @@ export default function Home() {
         </div>
       </nav>
 
+=======
+      
+      <Navbar/>
+      {/* Main Content */}
+>>>>>>> 3f617241658c38bd5595819403574aa143bcc288
       <main className={styles.main}>
         <section className={styles.searchSection}>
           <input

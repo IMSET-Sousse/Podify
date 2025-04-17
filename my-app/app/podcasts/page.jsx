@@ -1,7 +1,8 @@
+"use client"
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import listenNotesConfig from '@app/lib/listenNotesApi'; // Import your API configuration
-import '../styles/globals.css';  // Make sure this points to the correct path
+import '@/styles/globals.css';  // Make sure this points to the correct path
 
 const Podcast = () => {
   const [podcasts, setPodcasts] = useState([]);
