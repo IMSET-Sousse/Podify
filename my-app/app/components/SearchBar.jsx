@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { FaSearch, FaSpinner } from "react-icons/fa";
-import styles from "@/styles/page.module.css";
+import styles from "../../styles/page.module.css";
 
 export default function SearchBar({ onSearch }) {
   const [searchQuery, setSearchQuery] = useState("");

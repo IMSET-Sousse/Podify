@@ -1,5 +1,5 @@
 "use client";
-import { useAuth } from '@/app/context/AuthContext'; // Adjust path if necessary
+import { useAuth } from '../context/AuthContext'; // Adjust path if necessary
 
 const Header = () => {
   const { user } = useAuth(); // Get the user from context

@@ -25,17 +25,26 @@
 }
 /* Navbar */
 .navbar {
-  background-color: white;
-  border-bottom: 1px solid #eee;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
-  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navContainer {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,20 +53,23 @@
 .logoLink {
   display: flex;
   align-items: center;
-  text-decoration: none;
   gap: 1rem;
+  text-decoration: none;
+  color: inherit;
 }
 
-.logoImage {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
+.logo {
+  transition: transform 0.3s ease;
+}
+
+.logoLink:hover .logo {
+  transform: scale(1.05);
 }
 
 .brandName {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #333;
+  color: #2D1B69;
   margin: 0;
 }
 
@@ -72,28 +84,39 @@
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
-  color: #666;
-  font-weight: 500;
+  color: #4B5563;
   padding: 0.5rem 1rem;
-  border-radius: 4px;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
 }
 
 .navItem:hover {
-  color: #7C3AED;
+  color: #2D1B69;
+  background: rgba(45, 27, 105, 0.1);
+}
+
+.navItem.active {
+  color: #2D1B69;
+  background: rgba(45, 27, 105, 0.1);
+  font-weight: 600;
 }
 
 .navIcon {
   font-size: 1.2rem;
+  transition: transform 0.3s ease;
 }
 
-.navItem.active {
-  color: #7C3AED;
-  font-weight: 600;
+.navItem:hover .navIcon {
+  transform: scale(1.1);
 }
 
-/* Responsive Navbar */
+.navLabel {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
 @media (max-width: 768px) {
-  .navbar {
+  .navContainer {
     padding: 1rem;
   }
 
@@ -101,12 +124,16 @@
     gap: 1rem;
   }
 
-  .navItem span {
+  .navLabel {
     display: none;
   }
 
+  .navItem {
+    padding: 0.5rem;
+  }
+
   .navIcon {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 }
 

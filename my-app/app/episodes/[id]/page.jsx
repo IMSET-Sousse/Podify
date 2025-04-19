@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react"
 import { useParams } from "next/navigation"
 import Image from "next/image"
-import { Badge } from "@/components/ui/badge"
+import { Badge } from "../../../components/ui/badge"
 import { Clock, Calendar } from "lucide-react"
-import AudioPlayer from "@/app/components/AudioPlayer"
-import SocialInteractions from "@/app/components/SocialInteractions"
+import AudioPlayer from "../../components/AudioPlayer"
+import SocialInteractions from "../../components/SocialInteractions"
 
 // Simuler la récupération des données d'un épisode
 // Dans une vraie application, vous feriez un appel API ou utilisiez une base de données

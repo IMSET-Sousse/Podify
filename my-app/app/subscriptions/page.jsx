@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import styles from "@/styles/page.module.css";
-import Navbar from "@/app/components/Navbar";
+import styles from "../../styles/page.module.css";
+import Navbar from "../components/Navbar";
 
 export default function Subscriptions() {
   const [subscriptions] = useState([

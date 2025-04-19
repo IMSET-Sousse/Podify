@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { FaHeadphones, FaUsers, FaStar, FaChartLine } from "react-icons/fa";
 import SearchBar from "./SearchBar";
-import styles from "@/styles/page.module.css";
+import styles from "../../styles/page.module.css";
 
 const STATS = [
   { id: 1, value: "10K+", label: "Podcasts", icon: FaHeadphones },

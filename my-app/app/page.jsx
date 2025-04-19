@@ -4,13 +4,13 @@ import { useState } from "react";
 import { FaPlay, FaHeadphones, FaUsers, FaStar, FaChartLine, FaUserPlus } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "@/styles/page.module.css";
-import Navbar from "@/app/components/Navbar";
+import styles from "../styles/page.module.css";
+import Navbar from "./components/Navbar";
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
-
+  
   const categories = [
     { name: "Musique", icon: "🎵", color: "#FF6B6B", description: "Découvrez les meilleurs podcasts musicaux", count: "2.5K podcasts" },
     { name: "Éducation", icon: "📚", color: "#4ECDC4", description: "Apprenez avec les meilleurs experts", count: "1.8K podcasts" },
@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <Navbar />
-
+      
       <main className={styles.main}>
         {/* Hero */}
         <section className={styles.hero}>
@@ -54,11 +54,11 @@ export default function Home() {
             <h1>Découvrez le Meilleur du <span className={styles.highlight}>Podcasting</span></h1>
             <p>Explorez des milliers de podcasts sur tous les sujets qui vous passionnent</p>
             <div className={styles.heroSearch}>
-              <input
-                type="text"
-                placeholder="Rechercher des podcasts..."
-                value={searchQuery}
-                onChange={handleSearchChange}
+          <input
+            type="text"
+            placeholder="Rechercher des podcasts..."
+            value={searchQuery}
+            onChange={handleSearchChange}
                 className={styles.heroSearchInput}
               />
               <button className={styles.heroSearchButton}><FaPlay /> Rechercher</button>
@@ -115,7 +115,7 @@ export default function Home() {
                 <button><FaUserPlus /> Suivre</button>
               </article>
             ))}
-          </div>
+                </div>
         </section>
 
         {/* Latest Episodes */}

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { FaStar, FaClock } from "react-icons/fa";
-import styles from "@/styles/page.module.css";
+import styles from "../../styles/page.module.css";
 
 export default function SearchResults({ results, query }) {
   if (!results || results.length === 0) {

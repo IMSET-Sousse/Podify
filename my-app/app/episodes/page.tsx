@@ -1,12 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Search, Clock, Calendar } from "lucide-react"
+import { Input } from "../../components/ui/input"
+import { Button } from "../../components/ui/button"
+import { Card, CardContent, CardFooter, CardHeader } from "../../components/ui/card"
+import { Badge } from "../../components/ui/badge"
+import { Select, SelectContent, SelectItem } from "../../components/ui/select"
+import { FaSearch, FaClock, FaCalendar } from "react-icons/fa"
 import Image from "next/image"
 
 // Types pour les épisodes
@@ -134,20 +134,20 @@ export default function EpisodesPage() {
       {/* Barre de recherche et filtres */}
       <div className="mb-10 flex flex-col md:flex-row gap-4">
         <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" size={18} />
+          <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" size={18} />
           <Input
             type="text"
             placeholder="Rechercher un épisode..."
             className="pl-10"
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value)}
           />
         </div>
         <div className="w-full md:w-64">
-          <Select value={categoryFilter} onValueChange={setCategoryFilter}>
-            <SelectTrigger>
-              <SelectValue placeholder="Catégorie" />
-            </SelectTrigger>
+          <Select
+            value={categoryFilter}
+            onValueChange={setCategoryFilter}
+          >
             <SelectContent>
               {categories.map((category) => (
                 <SelectItem key={category} value={category}>
@@ -163,7 +163,7 @@ export default function EpisodesPage() {
       {filteredEpisodes.length > 0 ? (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredEpisodes.map((episode) => (
-            <Card key={episode.id} className="flex flex-col h-full">
+            <Card key={episode.id}>
               <div className="relative h-48 w-full">
                 <Image src={episode.image || "/placeholder.svg"} alt={episode.title} fill className="object-cover" />
               </div>
@@ -176,11 +176,11 @@ export default function EpisodesPage() {
               </CardContent>
               <CardFooter className="flex justify-between text-sm text-muted-foreground pt-0">
                 <div className="flex items-center gap-1">
-                  <Clock size={14} />
+                  <FaClock size={14} />
                   <span>{episode.duration}</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <Calendar size={14} />
+                  <FaCalendar size={14} />
                   <span>{episode.date}</span>
                 </div>
               </CardFooter>
