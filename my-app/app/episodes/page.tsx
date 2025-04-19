@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Input } from "../../components/ui/input"
+import { Input } from "../../components/ui/input" // Corrected path
 import { Button } from "../../components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader } from "../../components/ui/card"
 import { Badge } from "../../components/ui/badge"
