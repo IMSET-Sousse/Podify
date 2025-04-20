@@ -31,7 +31,7 @@ export default function EpisodesPage() {
       duration: "45 min",
       date: "20 avril 2025",
       category: "Technologie",
-      image : "my-app/public/images/aia.png", // Correction ici
+      image: "/images/aia.png",
   },
     {
       id: 2,
@@ -41,7 +41,7 @@ export default function EpisodesPage() {
       duration: "20 min",
       date: "5 mai 2025",
       category: "Bien-être",
-      image: "my-app/public/images/2m.png",
+      image: "/images/2m.png",
     },
     {
       id: 3,
@@ -51,7 +51,7 @@ export default function EpisodesPage() {
       duration: "60 min",
       date: "18 juin 2025",
       category: "Histoire",
-      image: "my-app/public/images/33.png",
+      image: "/images/33.png",
     },
     {
       id: 4,
@@ -61,7 +61,7 @@ export default function EpisodesPage() {
       duration: "35 min",
       date: "2 juillet 2025",
       category: "Business",
-      image: "my-app/public/images/images (1).png",
+      image: "/images/images (1).png",
     },
     {
       id: 5,
@@ -71,7 +71,7 @@ export default function EpisodesPage() {
       duration: "25 min",
       date: "14 août 2025",
       category: "Cuisine",
-      image: "my-app/public/images/Images-recette9.jpg",
+      image: "/images/Images-recette9.jpg",
     },
     {
       id: 6,
@@ -80,7 +80,7 @@ export default function EpisodesPage() {
       duration: "50 min",
       date: "9 septembre 2025",
       category: "Finance",
-      image: "my-app/public/images/Fond-fonce-1.png",
+      image: "/images/Fond-fonce-1.png",
     },
     {
       id: 7,
@@ -89,7 +89,7 @@ export default function EpisodesPage() {
       duration: "40 min",
       date: "22 octobre 2025",
       category: "Développement personnel",
-      image: "my-app/public/images/44.png",
+      image: "/images/44.png",
     },
     {
       id: 8,
@@ -99,7 +99,7 @@ export default function EpisodesPage() {
       duration: "55 min",
       date: "5 novembre 2025",
       category: "Musique",
-      image: "my-app/public/images/png-clipart-guitar-musical-instruments-music-art-thumbnail.png",
+      image: "/images/png-clipart-guitar-musical-instruments-music-art-thumbnail.png",
     },
   ]
 
