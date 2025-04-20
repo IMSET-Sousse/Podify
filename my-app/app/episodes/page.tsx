@@ -39,7 +39,7 @@ export default function EpisodesPage() {
       description:
         "Une séance de méditation guidée pour les débutants, avec des techniques simples pour commencer votre pratique.",
       duration: "20 min",
-      date: "5 mai 2023",
+      date: "5 mai 2025",
       category: "Bien-être",
       image: "my-app/public/images/2m.png",
     },
@@ -49,7 +49,7 @@ export default function EpisodesPage() {
       description:
         "Exploration des mystères et des réalisations des civilisations anciennes qui ont façonné notre monde.",
       duration: "60 min",
-      date: "18 juin 2023",
+      date: "18 juin 2025",
       category: "Histoire",
       image: "my-app/public/images/33.png",
     },
@@ -59,7 +59,7 @@ export default function EpisodesPage() {
       description:
         "Des conseils pratiques pour les entrepreneurs qui débutent leur aventure dans le monde des affaires.",
       duration: "35 min",
-      date: "2 juillet 2023",
+      date: "2 juillet 2025",
       category: "Business",
       image: "my-app/public/images/images (1).png",
     },
@@ -69,7 +69,7 @@ export default function EpisodesPage() {
       description:
         "Découvrez des recettes végétariennes simples et délicieuses que vous pouvez préparer en moins de 30 minutes.",
       duration: "25 min",
-      date: "14 août 2023",
+      date: "14 août 2025",
       category: "Cuisine",
       image: "my-app/public/images/Images-recette9.jpg",
     },
@@ -78,7 +78,7 @@ export default function EpisodesPage() {
       title: "Débat sur les cryptomonnaies",
       description: "Un débat animé sur l'avenir des cryptomonnaies et leur impact sur l'économie mondiale.",
       duration: "50 min",
-      date: "9 septembre 2023",
+      date: "9 septembre 2025",
       category: "Finance",
       image: "my-app/public/images/Fond-fonce-1.png",
     },
@@ -87,7 +87,7 @@ export default function EpisodesPage() {
       title: "Techniques de productivité",
       description: "Apprenez des techniques éprouvées pour améliorer votre productivité et mieux gérer votre temps.",
       duration: "40 min",
-      date: "22 octobre 2023",
+      date: "22 octobre 2025",
       category: "Développement personnel",
       image: "my-app/public/images/44.png",
     },
@@ -97,7 +97,7 @@ export default function EpisodesPage() {
       description:
         "Une analyse des tendances musicales qui ont marqué l'année 2023 et ce qu'elles nous disent sur notre société.",
       duration: "55 min",
-      date: "5 novembre 2023",
+      date: "5 novembre 2025",
       category: "Musique",
       image: "my-app/public/images/png-clipart-guitar-musical-instruments-music-art-thumbnail.png",
     },
