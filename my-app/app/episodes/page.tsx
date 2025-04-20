@@ -29,10 +29,10 @@ export default function EpisodesPage() {
       description:
         "Une discussion approfondie sur les tendances actuelles et futures de l'IA avec des experts du domaine.",
       duration: "45 min",
-      date: "12 avril 2023",
+      date: "20 avril 2025",
       category: "Technologie",
-      image: "/placeholder.svg?height=400&width=400",
-    },
+      image : "my-app/public/images/aia.png", // Correction ici
+  },
     {
       id: 2,
       title: "Méditation guidée pour débutants",
@@ -41,7 +41,7 @@ export default function EpisodesPage() {
       duration: "20 min",
       date: "5 mai 2023",
       category: "Bien-être",
-      image: "/placeholder.svg?height=400&width=400",
+      image: "my-app/public/images/2m.png",
     },
     {
       id: 3,
@@ -51,7 +51,7 @@ export default function EpisodesPage() {
       duration: "60 min",
       date: "18 juin 2023",
       category: "Histoire",
-      image: "/placeholder.svg?height=400&width=400",
+      image: "my-app/public/images/33.png",
     },
     {
       id: 4,
@@ -61,7 +61,7 @@ export default function EpisodesPage() {
       duration: "35 min",
       date: "2 juillet 2023",
       category: "Business",
-      image: "/placeholder.svg?height=400&width=400",
+      image: "my-app/public/images/images (1).png",
     },
     {
       id: 5,
@@ -71,7 +71,7 @@ export default function EpisodesPage() {
       duration: "25 min",
       date: "14 août 2023",
       category: "Cuisine",
-      image: "/placeholder.svg?height=400&width=400",
+      image: "my-app/public/images/Images-recette9.jpg",
     },
     {
       id: 6,
@@ -80,7 +80,7 @@ export default function EpisodesPage() {
       duration: "50 min",
       date: "9 septembre 2023",
       category: "Finance",
-      image: "/placeholder.svg?height=400&width=400",
+      image: "my-app/public/images/Fond-fonce-1.png",
     },
     {
       id: 7,
@@ -89,7 +89,7 @@ export default function EpisodesPage() {
       duration: "40 min",
       date: "22 octobre 2023",
       category: "Développement personnel",
-      image: "/placeholder.svg?height=400&width=400",
+      image: "my-app/public/images/44.png",
     },
     {
       id: 8,
@@ -99,7 +99,7 @@ export default function EpisodesPage() {
       duration: "55 min",
       date: "5 novembre 2023",
       category: "Musique",
-      image: "/placeholder.svg?height=400&width=400",
+      image: "my-app/public/images/png-clipart-guitar-musical-instruments-music-art-thumbnail.png",
     },
   ]
 
