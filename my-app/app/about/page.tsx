@@ -26,7 +26,7 @@ export default function AboutPage() {
     },
     {
       id: 4,
-      name: "Mooteaz khathraoui",
+      name: "Mootez khadhraoui",
       role: "Responsable Contenu",
       bio: "Grand amateur de podcasts, Mooteaz sélectionne et organise les contenus pour vous faire découvrir de nouvelles pépites.",
       image: "/my-app/public/images/IMG_2444.jpg",
