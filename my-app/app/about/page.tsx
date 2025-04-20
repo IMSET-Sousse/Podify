@@ -8,28 +8,28 @@ export default function AboutPage() {
       name: "Hela Garnaoui",
       role: "Fondatrice & CEO",
       bio: "Passionnée de podcasts depuis 3 ans, Hela a créé Podify pour rendre les podcasts plus accessibles à tous.",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/my-app/public/images/me.jpg",
     },
     {
       id: 2,
-      name: "Farah zayeni",
+      name: "Farah zayani",
       role: "Développeur Frontend",
       bio: "Expert en expérience utilisateur, Farah s'assure que Podify soit intuitif et agréable à utiliser.",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/my-app/public/images/1715286505946 (2).jpg",
     },
     {
       id: 3,
       name: "Ameni Ghorbel",
       role: "Designer UX/UI",
       bio: "Ameni apporte son œil créatif pour concevoir une interface élégante et fonctionnelle.",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/my-app/public/images/Screenshot_20241124_103324_com_hihonor_photos_SlotAlbumActivity.jpg",
     },
     {
       id: 4,
       name: "Mooteaz khathraoui",
       role: "Responsable Contenu",
       bio: "Grand amateur de podcasts, Mooteaz sélectionne et organise les contenus pour vous faire découvrir de nouvelles pépites.",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/my-app/public/images/IMG_2444.jpg",
     },
   ]
 
