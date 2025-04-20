@@ -8,28 +8,28 @@ export default function AboutPage() {
       name: "Hela Garnaoui",
       role: "Fondatrice & CEO",
       bio: "Passionnée de podcasts depuis 3 ans, Hela a créé Podify pour rendre les podcasts plus accessibles à tous.",
-      image: "/my-app/public/images/me.jpg",
+      image: "/images/me.jpg",
     },
     {
       id: 2,
       name: "Farah zayani",
       role: "Développeur Frontend",
       bio: "Expert en expérience utilisateur, Farah s'assure que Podify soit intuitif et agréable à utiliser.",
-      image: "/my-app/public/images/1715286505946 (2).jpg",
+      image: "/images/1715286505946 (2).jpg",
     },
     {
       id: 3,
       name: "Ameni Ghorbel",
       role: "Designer UX/UI",
       bio: "Ameni apporte son œil créatif pour concevoir une interface élégante et fonctionnelle.",
-      image: "/my-app/public/images/Screenshot_20241124_103324_com_hihonor_photos_SlotAlbumActivity.jpg",
+      image: "/images/Screenshot_20241124_103324_com_hihonor_photos_SlotAlbumActivity.jpg",
     },
     {
       id: 4,
       name: "Mooteaz khathraoui",
       role: "Responsable Contenu",
       bio: "Grand amateur de podcasts, Mooteaz sélectionne et organise les contenus pour vous faire découvrir de nouvelles pépites.",
-      image: "/my-app/public/images/IMG_2444.jpg",
+      image: "/images/IMG_2444.jpg",
     },
   ]
 
@@ -67,7 +67,7 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="relative h-[400px] rounded-lg overflow-hidden">
-            <Image src="/placeholder.svg?height=800&width=600" alt="Podify mission" fill className="object-cover" />
+            <Image src="/images/creator1.jpg" alt="Podify mission" fill className="object-cover" />
           </div>
         </div>
       </section>
