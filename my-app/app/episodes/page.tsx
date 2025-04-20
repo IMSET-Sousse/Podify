@@ -97,7 +97,7 @@ export default function EpisodesPage() {
       description:
         "Une analyse des tendances musicales qui ont marqué l'année 2023 et ce qu'elles nous disent sur notre société.",
       duration: "55 min",
-      date: "5 novembre 2025",
+      date: "5 novembre 202",
       category: "Musique",
       image: "my-app/public/images/png-clipart-guitar-musical-instruments-music-art-thumbnail.png",
     },
