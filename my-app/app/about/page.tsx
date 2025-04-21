@@ -52,17 +52,17 @@ export default function AboutPage() {
           <div>
             <h2 className="text-2xl font-semibold mb-4">Notre Mission</h2>
             <p className="text-muted-foreground mb-4">
-              Podify est né d'une passion pour les podcasts et d'une vision simple : créer une plateforme dédiée
+              Podify est né d&apos;une passion pour les podcasts et d&apos;une vision simple : créer une plateforme dédiée
               exclusivement aux podcasts, où les auditeurs peuvent facilement découvrir, écouter et partager leur
               contenu audio préféré.
             </p>
             <p className="text-muted-foreground mb-4">
               Notre objectif est de connecter les créateurs de podcasts avec leur audience, tout en offrant une
-              expérience d'écoute fluide et personnalisée. Nous croyons au pouvoir des histoires audio et à leur
+              expérience d&apos;écoute fluide et personnalisée. Nous croyons au pouvoir des histoires audio et à leur
               capacité à éduquer, divertir et inspirer.
             </p>
             <p className="text-muted-foreground">
-              Avec Podify, nous voulons démocratiser l'accès aux podcasts et soutenir les créateurs de contenu audio
+              Avec Podify, nous voulons démocratiser l&apos;accès aux podcasts et soutenir les créateurs de contenu audio
               dans leur développement.
             </p>
           </div>
@@ -174,7 +174,7 @@ export default function AboutPage() {
             </div>
             <h3 className="font-bold text-xl mb-2">Qualité</h3>
             <p className="text-muted-foreground">
-              Nous nous engageons à offrir une expérience d'écoute de haute qualité et à mettre en avant des contenus
+              Nous nous engageons à offrir une expérience d&apos;écoute de haute qualité et à mettre en avant des contenus
               pertinents.
             </p>
           </div>
